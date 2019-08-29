@@ -1,0 +1,25 @@
+<template>
+    <div>
+        <h1>if - else</h1>
+        <p v-if="visible">You can see this</p>
+        <p v-else>Can you see this???</p>
+        <hr />
+        <h1>for</h1>
+        <p v-for="n in numbers" :key="'xx' + n">{{ n }}</p>
+        <p v-for="(n, idx) in numbers" :key="idx">{{ n }}</p>
+        <ul>
+            <li v-for="(n, idx) in numbers" :key="idx">{{ n }}</li>
+        </ul>
+    </div>
+</template>
+
+<script>
+export default {
+    data(){
+        return {
+            visible: false,
+            numbers: [1,4,2,6,7,9]
+        }
+    }
+}
+</script>

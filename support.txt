@@ -1,0 +1,74 @@
+//=>เช็คข้อมูลใน vue
+vue inspect = ดูสเปค webpack
+vue inspect --rules ที่เกี่ยวกับ ที่สำคัญ
+vue inspect --rule scss เช็คว่ามีไหม
+
+//=>install sass in vue
+yarn add node-sass --dev
+yarn add sass-loader --dev
+
+//=>install typescript
+yarn add typescript --dev
+yarn add ts-loader --dev
+
+tsconfig.json
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "experimentalDecorators": true
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.vue"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
+
+vue.config.js
+module.exports = {
+    configureWebpack: {
+        module: {
+            rules: [
+                {
+                    test: /\.ts$/,
+                    exclude: /node_modules|vue\/src/,
+                    loader: "ts-loader",
+                    options: {
+                        appendTsSuffixTo: [/\.vue$/]
+                    }
+                }
+            ]
+        }
+    },
+    ...
+}
+
+หมายเหตุ : ts-loader จะใช้ร่วมกับ typescript เป็นการขอโหลดไฟล์
+
+
+//=>vue form validate
+yarn add vee-validate@2
+yarn add animate.css
+
+vee-validate.js
+import Vue from 'vue';
+import VeeValidate from 'vee-validate';
+import dictionary from '@/dictionary'; //=>เก็บคำสั่ง Validate 
+
+Vue.use(VeeValidate, {
+    dictionary: dictionary,
+    locale: 'en'
+});
+
+
+
+//=>ajax
+yarn add axios
+
+
+//=>auto complete
+yarn add lodash

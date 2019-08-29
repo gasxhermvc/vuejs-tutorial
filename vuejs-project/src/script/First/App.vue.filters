@@ -1,0 +1,30 @@
+<template>
+    <div>
+        <p>{{ 'Hello World' }}</p>
+        <p>{{ 'Hello World' | reverseStr }}</p>
+        <p>{{ 'Hello World' | reverseStr | reverseStr }}</p>
+        <p>{{ 'Hello World' | reverseStr | reverseStrx('x') }}</p>
+    </div>
+</template>
+
+<script>
+export default {
+    filters: {
+        reverseStr(value) {
+            return value.split('')
+                .reverse()
+                .join('');
+        },
+        reverseStrx(value,value1) {
+            return value.split('')
+                .reverse()
+                .join('') + value1;
+        }
+    },
+    data(){
+        return {
+
+        }
+    }
+}
+</script>

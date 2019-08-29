@@ -1,0 +1,29 @@
+<template>
+    <div>
+        <button @click="counter += 1" v-if="buttonVisible">Update</button>
+        <button v-on:click="counter += 1" v-if="buttonVisible">Update</button>
+        <p>{{ counter }}</p>
+    </div>
+</template>
+<script>
+export default {
+    watch: {
+        counter(newValue, oldValue) { 
+            console.log('counter.changed : ', newValue , oldValue);
+
+            if(newValue === 5){
+                this.buttonVisible = false;
+            }
+        },
+        buttonVisible(newValue, oldValue) {
+            console.log('buttonVisible.changed : ', newValue , oldValue);
+        }
+    },
+    data() {
+        return {
+            counter: 1,
+            buttonVisible: true,
+        }
+    }
+}
+</script>

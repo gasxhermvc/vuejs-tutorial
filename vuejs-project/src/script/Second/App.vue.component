@@ -1,0 +1,32 @@
+<template>
+    <div>
+        <p>
+            <section class="section">
+                <div class="container">
+                    <p>App: My Text</p>
+                    <hello-world />
+                </div>
+            </section>
+        </p>
+    </div>
+</template>
+
+<script>
+//=>yarn add bulma
+import 'bulma/css/bulma.min.css';
+import { head } from './vue-head'
+import HelloWorld from './components/HelloWorld';
+
+export default {
+    head: head,
+    components:{
+        'hello-world': HelloWorld
+    }
+}
+</script>
+
+<style>
+body{
+    font-family: 'Taviraj', serif;
+}
+</style>

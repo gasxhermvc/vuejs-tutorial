@@ -1,0 +1,47 @@
+<template>
+  <div>
+    <h1>Vuew.js Application</h1>
+    <h3>{{ title }}</h3>
+    <p v-html="counter"></p>
+    <p>{{ 'hi'.split('').reverse().join('') }}</p>
+    <p>{{ 20+1 }}</p>
+    <div>{{  rawHtml }}</div>
+    <div v-html="rawHtml"></div>
+    <hr />
+    <input type="text" v-model="title" />
+    <p>INPUT : {{ title }}</p>
+    <hr />
+    <div>
+      <input type="text" v-model="person.name" />
+      <input type="text" v-model="person.surname" />
+      <p>Name : {{ person.name }}</p>
+      <p>Surname : {{ person.surname }}</p>
+      <p>FullName : {{ fullname }}</p>
+      <p> FullName and Title : {{ fullNameAndTitle }}</p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  computed: {
+    fullname() {
+      return this.person.name + ' ' + this.person.surname
+    },
+    fullNameAndTitle(){
+      return this.fullname + ' ' + this.title
+    }
+  },
+  data(){
+    return {
+      title: 'Hello World',
+      counter: 1,
+      rawHtml: '<b>My Text</b>',
+      person: {
+        name: 'John',
+        surname: 'Doe',
+      }
+    }
+  }
+}
+</script>

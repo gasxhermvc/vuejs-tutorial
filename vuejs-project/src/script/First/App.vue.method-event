@@ -1,0 +1,22 @@
+<template>
+    <div>
+        <button @click="handleClick(5)">Click Me</button>
+        <hr />
+        <p>{{ counter }}</p>
+    </div>
+</template>
+
+<script>
+export default {
+    methods: {
+        handleClick(value) {
+            this.counter += value;
+        }
+    },
+    data(){
+        return {
+            counter: 1,
+        }
+    }
+}
+</script>
